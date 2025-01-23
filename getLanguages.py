@@ -4,10 +4,14 @@ from dotenv import load_dotenv
 from langchain_openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 import json
-from latex import create_resume
+
 
 
 # Load environment variables from a .env file
+
+# f= open("JobDescription.txt", "r")
+# JOB_DESCRIPTION = f.read()
+
 load_dotenv()
 tools = ['Git/GitHub', 'Bash', 'Yaml', 'Docker', 'FASTAPI']
 
@@ -24,17 +28,15 @@ prompt = PromptTemplate.from_template(
     '''
     )
 
-f= open("JobDescription.txt", "r")
-JOB_DESCRIPTION = f.read()
 llm= OpenAI()
-chain = prompt | llm
-response = chain.invoke(
-    {
-        "job_description": JOB_DESCRIPTION,
-        
-    }
-)
-response = response.replace("\n","")
-languages = response.split(",")
-print(languages)
-create_resume(languages,tools)
+def extractInformation(JOB_DESCRIPTION):
+    chain = prompt | llm
+    response = chain.invoke(
+        {
+            "job_description": JOB_DESCRIPTION,
+            
+        }
+    )
+    response = response.replace("\n","")
+    languages = response.split(",")
+    return [languages,tools]

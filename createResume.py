@@ -19,7 +19,9 @@ def create_section_from_file(file_path):
     return NoEscape(content)
 
 
-def create_resume(languages,tools):
+def create_resume(skills):
+    languages = skills[0]
+    tools = skills[1]
     # Create the LaTeX document
     doc = Document()
     # Add preamble
