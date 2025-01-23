@@ -1,0 +1,13 @@
+# Fdb version 4
+["pdflatex"] 1737520337 "f:/cvMasti/Resume/main.tex" "main.pdf" "main" 1737520338 2
+  "d:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1708191168 40745 87bb86a62d462f93a1efc6b0c65c872e ""
+  "d:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708195210 7883457 fe77283604ccf24f482b170c2ec06cd3 ""
+  "d:/texlive/2023/texmf.cnf" 1708194677 713 e69b156964470283e0530f5060668171 ""
+  "f:/cvMasti/Resume/main.tex" 1737520335 3727 4a3730ce5140510a3a73baf6afbbdb75 ""
+  "main.aux" 1737520337 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1737520335 3727 4a3730ce5140510a3a73baf6afbbdb75 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.pdf"
+  (rewritten before read)
