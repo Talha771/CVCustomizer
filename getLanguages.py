@@ -20,7 +20,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 prompt = PromptTemplate.from_template(
     '''
     Retrieve the skills that are purely about the tech stack from the job description {job_description} 
-    Return it as a comma seperated string. 
+    Return it as a comma seperated string. Limit to top 10 skills
     
     Example : "Javascript, Typescript, React"
     Do Not Add Slashes
