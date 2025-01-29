@@ -3,9 +3,18 @@ from pydantic import BaseModel
 from getLanguages import extractInformation
 from fastapi.responses import JSONResponse, FileResponse
 from createResume import create_resume
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins. You can specify a specific URL here if needed.
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
 class DescriptionModel(BaseModel):
     description: str
 
