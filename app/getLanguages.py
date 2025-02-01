@@ -29,7 +29,7 @@ prompt = PromptTemplate.from_template(
     )
 
 llm= OpenAI()
-def extractInformation(JOB_DESCRIPTION):
+def extract_information(JOB_DESCRIPTION):
     chain = prompt | llm
     response = chain.invoke(
         {

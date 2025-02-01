@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from getLanguages import extractInformation
+from app.getLanguages import extract_information 
 from fastapi.responses import JSONResponse, FileResponse
-from createResume import create_resume
+from app.createResume import create_resume
 from fastapi.middleware.cors import CORSMiddleware
-
 
 app = FastAPI()
 
@@ -36,10 +35,11 @@ async def return_custom_cv():
         return JSONResponse(content={"error": "No Job Description Entered"}, status_code=500)
     
     # Extract languages and tools from the description
-    languages = extractInformation(stored_description)
+    languages = extract_information(stored_description)
     
     # Try to generate the resume
     try:
+        # create_resume(languages)
         create_resume(languages)
     except Exception as e:
         return JSONResponse(content={"error": f"Failed to create resume: {str(e)}"}, status_code=500)
