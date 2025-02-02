@@ -1,1 +1,11 @@
 .env
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore __pycache__ directories
+__pycache__/
+
+# Ignore compiled C files (if any)
+*.so

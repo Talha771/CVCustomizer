@@ -1,9 +1,6 @@
 from pylatex import Document, Section, Itemize, Command, Description
 from pylatex.utils import NoEscape
 
-
-
-
 def create_skills_section(languages, tools):
     skills_section = Section('Skills')
     skills_list = Description()
