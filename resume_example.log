@@ -1,0 +1,13 @@
+This is TeX, Version 3.141592653 (TeX Live 2024) (preloaded format=tex 2024.12.15)  2 FEB 2025 05:03
+**resume_example.tex
+(./resume_example.tex
+! Undefined control sequence.
+l.1 \documentclass
+                  {article}%
+? 
+! Emergency stop.
+l.1 
+    
+End of file on the terminal!
+
+No pages of output.
