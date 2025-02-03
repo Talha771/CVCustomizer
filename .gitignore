@@ -3,7 +3,10 @@
 *.pyc
 *.pyo
 *.pyd
-
+*.fls
+*.aux
+*.fdb_latexmk
+*.synctex.gz
 # Ignore __pycache__ directories
 __pycache__/
 

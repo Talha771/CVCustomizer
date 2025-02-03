@@ -13,3 +13,6 @@ def addUser():
 
 def deleteUser():
     return "deleteUser"
+
+def createHeaderLatex():
+        

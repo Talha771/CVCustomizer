@@ -13,3 +13,8 @@ def addSubheading():
 
 def deleteSubheading():
     return "deleteUser"
+
+def createSubHeadingLatex(text):
+    return r"\item " + text
+
+    
