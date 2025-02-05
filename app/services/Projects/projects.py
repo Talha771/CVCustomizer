@@ -17,8 +17,8 @@ from pylatex import Document, Subsection, NoEscape, Tabular, Table,Itemize
 from pylatex.utils import italic,bold
 
 
-def create_stack(designation,stackList):
-    temp += ' ('
+def create_stack(stackList):
+    temp =' ('
     for i in range(len(stackList)-1):
         temp+=stackList[i]+"/"
     temp+=stackList[-1]
@@ -38,4 +38,3 @@ def createProjectLatex(company,stack,bullets, start, end='Current'):
         itemize.add_item(bullet)
     experience.append(itemize)
     return experience
-# # Create the document

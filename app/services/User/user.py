@@ -14,5 +14,24 @@ def addUser():
 def deleteUser():
     return "deleteUser"
 
-def createHeaderLatex():
-        
+from pylatex import Document, NoEscape
+
+def create_header(name, github, linkedin, number, email):
+    header = f"""
+    \\begin{{description}}
+    \\item 
+        \\begin{{center}}
+            \\textbf{{\\Huge \\scshape {name}}} \\\\ \\vspace{{8pt}}
+            \\small 
+            \\faIcon{{github}}
+            {{\\underline{{/{github}}}}} $  $
+            \\faIcon{{linkedin}}
+            {{\\underline{{in/{linkedin}}}}} $  $
+            \\faIcon{{envelope}}
+            {{\\underline{{{email}}}}} $  $
+            \\faIcon{{phone}}
+            {{\\underline{{{number}}}}}
+        \\end{{center}}
+    \\end{{description}}
+    """
+    return header

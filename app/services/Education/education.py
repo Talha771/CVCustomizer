@@ -18,7 +18,7 @@ def addEducation():
 def deleteEducation():
     return ("deleteEducation")
 
-def createEducationLatex(institution, program, start_date, end_date="Ongoing")
+def createEducationLatex(institution, program, start_date, end_date="Ongoing"):
     education_subsection = Subsection("",numbering=False)
     education_subsection.append(NoEscape(r'\noindent'))
     education_subsection.append(NoEscape(r'\textbf{' + institution + '}'))

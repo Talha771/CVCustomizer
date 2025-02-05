@@ -1,4 +1,4 @@
-from pylatex import Document, Subsection, NoEscape, Tabular, Table,Itemize
+from pylatex import Document, Subsection, NoEscape, Tabular, Table,Itemize,Section
 from pylatex.utils import italic,bold
 
 def getExperience(id):
@@ -25,6 +25,10 @@ def create_designation_stack(designation,stackList):
     temp += ')'
     return temp
  
+def createSection(name):
+    section = Section(name,numbering=False)
+    return section
+
 def createExperienceLatex(company, designation, stack,bullets, start, end='Current'):
     experience = Subsection("", numbering=False)
     designation_stack = create_designation_stack(designation, stack)
