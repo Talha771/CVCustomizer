@@ -1,4 +1,4 @@
-from pylatex import Document, Section, Command,Subsection
+from pylatex import Document, Section, Command,Subsection,VerticalSpace
 from pylatex.utils import italic, NoEscape
 
 
@@ -20,12 +20,16 @@ def deleteEducation():
 
 def createEducationLatex(institution, program, start_date, end_date="Ongoing"):
     education_subsection = Subsection("",numbering=False)
+    education_subsection.append(NoEscape(r"\vspace{-4mm}"))
     education_subsection.append(NoEscape(r'\noindent'))
     education_subsection.append(NoEscape(r'\textbf{' + institution + '}'))
     education_subsection.append(NoEscape(r'\hfill'))
     education_subsection.append(NoEscape(start_date + " - " + end_date))
-    education_subsection.append("\n")
+    education_subsection.append(" \n")
     education_subsection.append(NoEscape(r'\textit{' + program + '}'))
-    education_subsection.append("\n\n")
+    # education_subsection.append(NoEscape(r"\vspace{-4mm}"))
+
+    # education_subsection.append("\n\n")
+
     return education_subsection
 

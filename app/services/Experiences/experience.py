@@ -1,4 +1,4 @@
-from pylatex import Document, Subsection, NoEscape, Tabular, Table,Itemize,Section
+from pylatex import Document, Subsection, NoEscape, Tabularx, Table,Itemize,Section
 from pylatex.utils import italic,bold
 
 def getExperience(id):
@@ -31,12 +31,15 @@ def createSection(name):
 
 def createExperienceLatex(company, designation, stack,bullets, start, end='Current'):
     experience = Subsection("", numbering=False)
+    experience.append(NoEscape(r"\vspace{-4mm}"))
+
     designation_stack = create_designation_stack(designation, stack)
-    date_range = start + " — " + end  
+    date_range = start + " — " + end
     table = Table()
-    tabular = Tabular('c|cl') 
-    tabular.add_row((bold(company), italic(designation_stack), date_range))
+    tabular = Tabularx('cXr',width=3) 
+    tabular.add_row((bold(company+" |"), italic(designation_stack), date_range))
     experience.append(tabular)
+
     itemize=Itemize()
     for bullet in bullets:
         itemize.add_item(bullet)

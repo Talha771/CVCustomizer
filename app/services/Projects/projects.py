@@ -1,3 +1,6 @@
+from pylatex import Document, Subsection, NoEscape, Tabularx, Table,Itemize
+from pylatex.utils import italic,bold
+
 def getProject(id):
     return "getProject"
 
@@ -13,9 +16,6 @@ def addProject():
 def deleteProject():
     return "deleteProject"
 
-from pylatex import Document, Subsection, NoEscape, Tabular, Table,Itemize
-from pylatex.utils import italic,bold
-
 
 def create_stack(stackList):
     temp =' ('
@@ -27,11 +27,13 @@ def create_stack(stackList):
  
 def createProjectLatex(company,stack,bullets, start, end='Current'):
     experience = Subsection("", numbering=False)
+    experience.append(NoEscape(r"\vspace{-4mm}"))
+
     stack = create_stack(stack)
     date_range = start + " — " + end  
     table = Table()
-    tabular = Tabular('c|cl') 
-    tabular.add_row((bold(company), italic(stack), date_range))
+    tabular = Tabularx('cXr',width=3) 
+    tabular.add_row((bold(company + " |"), italic(stack), date_range))
     experience.append(tabular)
     itemize=Itemize()
     for bullet in bullets:

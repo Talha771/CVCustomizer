@@ -1,0 +1,209 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{tabularx}%
+%
+
+\usepackage{latexsym}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+% \include{Skills}
+% -------------------- FONT OPTIONS --------------------
+% sans-serif
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% serif
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-1in} % Default was -.5in
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Subsection formatting
+\titleformat{\subsection}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%
+\usepackage{fontawesome5} \usepackage{titlesec} \usepackage{xcolor} % Ensures color functionality%
+%
+\begin{document}%
+\normalsize%
+\vspace{-10mm}%
+
+    \begin{description}
+    \item 
+        \begin{center}
+            \textbf{\Huge \scshape Muhammad Talha} \\ \vspace{8pt}
+            \small 
+            \faIcon{github}
+            {\underline{/Wolfbiter771}} $  $
+            \faIcon{linkedin}
+            {\underline{in/tjbravo}} $  $
+            \faIcon{envelope}
+            {\underline{talha.j771@gmail.com}} $  $
+            \faIcon{phone}
+            {\underline{2149093357}}
+        \end{center}
+    \end{description}
+    %
+\section*{Education}%
+\label{sec:Education}%
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\noindent%
+\textbf{Habib University}%
+\hfill%
+2020 - 2024%
+ \newline%
+%
+\textit{Bachelors of Computer Science}
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\noindent%
+\textbf{Alpha College}%
+\hfill%
+2018 - 2020%
+ \newline%
+%
+\textit{Advanced Level GCSE}
+
+%
+\section{Skills}%
+\label{sec:Skills}%
+\begin{description}%
+\item[]%
+Languages: Python, JavaScript, C++, SQL%
+\item[]%
+Tools: Docker, PostgreSQL, Git, AWS, Kubernetes%
+\end{description}
+
+%
+\section*{Experience}%
+\label{sec:Experience}%
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\begin{tabularx}{\textwidth}{cXr}%
+\textbf{Acme Corp |}&\textit{Full Stack Engineer (NodeJs/Express/React/Typescript)}&January 2022 — Current\\%
+\end{tabularx}%
+\begin{itemize}%
+\item%
+Developed scalable web applications%
+\item%
+Collaborated with cross{-}functional teams%
+\item%
+Implemented RESTful APIs%
+\end{itemize}
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\begin{tabularx}{\textwidth}{cXr}%
+\textbf{Tech Innovators Inc. |}&\textit{Software Engineer (Python/Django/PostgreSQL/Docker)}&June 2020 — December 2021\\%
+\end{tabularx}%
+\begin{itemize}%
+\item%
+Designed and developed RESTful APIs using Django%
+\item%
+Optimized database queries for better performance%
+\item%
+Deployed applications using Docker and Kubernetes%
+\end{itemize}
+
+%
+\section*{Projects}%
+\label{sec:Projects}%
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\begin{tabularx}{\textwidth}{cXr}%
+\textbf{Yohsin Connect |}&\textit{ (Python/LangChain/FAISS/PyTorch/TensorFlow)}&2024 — Current\\%
+\end{tabularx}%
+\begin{itemize}%
+\item%
+Developed a Retrieval Augmented Generation (RAG) chatbot to provide instant responses to inquiries from prospective students at Habib University.%
+\item%
+Integrated advanced LLM models using TensorFlow and PyTorch to understand and generate human{-}like responses.%
+\item%
+Utilized LangChain for streamlined implementation of chat functionalities and FAISS for efficient information retrieval from a large vector database/store of university{-}related documents.%
+\end{itemize}
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\begin{tabularx}{\textwidth}{cXr}%
+\textbf{Personal Home Lab and Smart Home Setup |}&\textit{ (YAML/Python/Docker)}&Ongoing — Current\\%
+\end{tabularx}%
+\begin{itemize}%
+\item%
+Configured diverse services: Jellyfin, Home Assistant, Transmission Daemon with public access.%
+\item%
+Managed Docker containers for efficient deployment.%
+\end{itemize}
+
+%
+\subsection*{}%
+\label{subsec:}%
+\vspace{-4mm}%
+\begin{tabularx}{\textwidth}{cXr}%
+\textbf{BomberMan Clone |}&\textit{ (C++/SDL2/Sprite Animations/Polymorphism)}&December 2021 — Current\\%
+\end{tabularx}%
+\begin{itemize}%
+\item%
+Recreated the famous Bomberman game in C++ using SDL2, including sprite animations and custom game mechanics.%
+\item%
+Implemented OOP design patterns and polymorphism.%
+\end{itemize}
+
+%
+\end{document}
