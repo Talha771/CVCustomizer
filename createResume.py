@@ -1,9 +1,6 @@
 from pylatex import Document, Section, Itemize, Command, Description
 from pylatex.utils import NoEscape
 
-
-
-
 def create_skills_section(languages, tools):
     skills_section = Section('Skills')
     skills_list = Description()
@@ -124,7 +121,6 @@ def create_resume(skills):
     for section in sections: 
         doc.append(create_section_from_file(section))
     doc.append(create_skills_section(languages, tools))
-
     doc.generate_tex("resume")
     doc.generate_pdf("resume", clean=True)
 

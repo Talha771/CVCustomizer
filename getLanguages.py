@@ -19,8 +19,8 @@ tools = ['Git/GitHub', 'Bash', 'Yaml', 'Docker', 'FASTAPI']
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 prompt = PromptTemplate.from_template(
     '''
-    Retrieve the skills that are purely about the tech stack from the job description {job_description} 
-    Return it as a comma seperated string. 
+    Retrieve the programming languages that are purely about the tech stack from the job description {job_description}, 
+    Return those that overlap with {known_languages} as a comma seperated string 
     
     Example : "Javascript, Typescript, React"
     Do Not Add Slashes
@@ -29,12 +29,12 @@ prompt = PromptTemplate.from_template(
     )
 
 llm= OpenAI()
-def extractInformation(JOB_DESCRIPTION):
+def extractInformation(JOB_DESCRIPTION,known_languages):
     chain = prompt | llm
     response = chain.invoke(
         {
             "job_description": JOB_DESCRIPTION,
-            
+            "known_languages" : known_languages
         }
     )
     response = response.replace("\n","")

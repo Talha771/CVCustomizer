@@ -3,13 +3,22 @@ from pydantic import BaseModel
 from getLanguages import extractInformation
 from fastapi.responses import JSONResponse, FileResponse
 from createResume import create_resume
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins. You can specify a specific URL here if needed.
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
 class DescriptionModel(BaseModel):
     description: str
 
 stored_description = None
+known_languages = ['Python',"Typescript","Javascript", "C++", "Cuda","SQL","NOSQL"]
 
 @app.post("/description")
 async def root(data: DescriptionModel):
@@ -27,7 +36,7 @@ async def return_custom_cv():
         return JSONResponse(content={"error": "No Job Description Entered"}, status_code=500)
     
     # Extract languages and tools from the description
-    languages = extractInformation(stored_description)
+    languages = extractInformation(stored_description,known_languages)
     
     # Try to generate the resume
     try:
