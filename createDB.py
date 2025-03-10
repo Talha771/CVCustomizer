@@ -15,16 +15,23 @@ DB_NAME = os.getenv("DB_NAME")
 DATABASE_URL = f"postgresql://{DB_USERNAME}:{DB_SECRET}@{DB_URL}:{DB_PORT}/{DB_NAME}"
 
 print(DATABASE_URL)
-def db_init():
-    for table in Base.metadata.tables.values():
-        print(f"Table: {table.name}")
-        for column in table.columns:
-            print(f"  Column: {column.name}, Type: {column.type}")
-    print("Initializing database...")
-    engine = create_engine(DATABASE_URL)
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-    print("Creating tables...")
-    Base.metadata.create_all(bind=engine)
-    print("Tables created.")
-    
-db_init()
+engine = create_engine(DATABASE_URL, echo=True)
+
+def db_connect():
+    SessionLocal = sessionmaker(bind=engine)
+
+    session = SessionLocal()
+    from sqlalchemy import text
+
+    session = SessionLocal()
+
+    try:
+        result = session.execute(text("SELECT 1")) 
+        if result.rowcount > 0:
+            print("Connection successful!")
+        else:
+            print("Connection test returned no results.")
+        
+    except Exception as e:
+        # If there is an error, print the error message
+        print(f"An error occurred: {e}")
