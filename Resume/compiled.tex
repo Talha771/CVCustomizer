@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{latexsym}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+% \input{glyphtounicode}
+% \include{Skills}
+% -------------------- FONT OPTIONS --------------------
+% sans-serif
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% serif
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-1in} % Default was -.5in
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Subsection formatting
+\titleformat{\subsection}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\setlength{\footskip}{4.08003pt}
+
+\begin{document}
+
+
+\begin{description}
+    \item 
+        \begin{center}
+            \textbf{\Huge \scshape Muhammad Talha} \\ \vspace{8pt}
+            \small 
+            \faIcon{github}
+            \href{https://github.com/Talha771}
+            {\underline{Talha771}} $  $
+            \faIcon{linkedin}
+            \href{https://linkedin.com/in/tjbravo}{\underline{tjbravo}} $  $
+            \faIcon{envelope}
+            \href{mailto:talha.j771@gmail.com}
+            {\underline{talha.j771@gmail.com}}
+            \faIcon{phone}
+            \href{tel:(214)9093357}{\underline{(214)-909-3357}}
+        \end{center}
+\end{description}
+
+
+\section{Education}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Habib University}{September 2020 - June 2024}
+      {B.S. Computer Science}{}
+    \resumeSubheading
+      {Alpha College}{September 2018 - August 2020}
+      {A-Levels}{}
+\resumeSubHeadingListEnd
+
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading
+    {\textbf{QLU}\vspace{8pt} $|$ \footnotesize\emph{Software Developer (Full Stack: TypeScript/Node.js/Next.js/Express)}}{June 2024 -- October 2024}
+    \begin{itemize}
+        \item Implemented a custom search algorithm using Cassandra on an at-rest encrypted database, ensuring security and efficiency.
+        \item Singlehandedly deployed attachment functionality, managing the complete development lifecycle for front-end and back-end integration.
+        \item Collaborated with design and product teams to create user-centric applications adhering to design principles and user flow requirements.
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+
+\section{Personal Projects}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading
+    {\textbf{Yohsin Connect} $|$ \footnotesize\emph{Python, LangChain, FAISS, PyTorch, TensorFlow}}{2024}
+    \resumeItemListStart
+        \resumeItem{Developed a Retrival Augmented Generation (RAG) chatbot to provide instant responses to inquiries from prospective students at Habib University.}
+        \resumeItem{Integrated advanced LLM models using TensorFlow and PyTorch to understand and generate human-like responses.}
+        \resumeItem{Utilized LangChain for streamlined implementation of chat functionalities and FAISS for efficient information retrieval from a large vector database/store of university related documents.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Python, JavaScript, HTML/CSS, CUDA, SQL, LaTeX }\\
+     \textbf{Tools}{: Git/GitHub, Bash, Yaml, Docker, FASTAPI }\\
+    }}
+ \end{itemize}
+
+
+\end{document}
