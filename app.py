@@ -4,7 +4,7 @@ from getLanguages import extractInformation
 from fastapi.responses import JSONResponse, FileResponse
 from createResume import create_resume
 from fastapi.middleware.cors import CORSMiddleware
-
+import uvicorn
 
 app = FastAPI()
 
