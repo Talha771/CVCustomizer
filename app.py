@@ -49,3 +49,6 @@ async def return_custom_cv():
     
     # Return the file as a response
     return FileResponse(resume_path, media_type="application/pdf", filename="custom_resume.pdf")
+
+if __name__ == "__main__":
+    uvicorn.run(app.app, host="0.0.0.0", port=8000, reload=True) 
