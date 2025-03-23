@@ -1,5 +1,9 @@
 from pylatex import Document, Section, Itemize, Command, Description
 from pylatex.utils import NoEscape
+import subprocess
+
+
+
 
 def create_skills_section(languages, tools):
     skills_section = Section('Skills')
@@ -36,7 +40,6 @@ def create_resume(skills):
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{fontawesome5}
-\input{glyphtounicode}
 % \include{Skills}
 % -------------------- FONT OPTIONS --------------------
 % sans-serif
@@ -75,7 +78,6 @@ def create_resume(skills):
 }{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
 
 % -------------------- CUSTOM COMMANDS --------------------
 \newcommand{\resumeItem}[1]{
@@ -121,6 +123,7 @@ def create_resume(skills):
     for section in sections: 
         doc.append(create_section_from_file(section))
     doc.append(create_skills_section(languages, tools))
-    doc.generate_tex("resume")
-    doc.generate_pdf("resume", clean=True)
+
+    doc.generate_tex("resume")  
+    subprocess.run(["tectonic", "resume.tex"])
 
