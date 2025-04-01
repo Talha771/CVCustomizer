@@ -4,9 +4,50 @@ from getLanguages import extractInformation
 from fastapi.responses import JSONResponse, FileResponse
 from createResume import create_resume
 from fastapi.middleware.cors import CORSMiddleware
+from Resume.resume_generator import compile_resume, createCompiledResume
+from apit_types import CVItem
 
 app = FastAPI()
 
+global CVData
+CVData = {
+        "education": [
+            {
+                "institution": "Habib University",
+                "period": "September 2020 - June 2024",
+                "degree": "B.S. Computer Science"
+            },
+            {
+                "institution": "Alpha College",
+                "period": "September 2018 - August 2020",
+                "degree": "A-Levels"
+            }
+        ],
+        "experience": [
+            {
+                "company": "QLU",
+                "position": "Software Developer (Full Stack: TypeScript/Node.js/Next.js/Express)",
+                "period": "June 2024 -- October 2024",
+                "bullets": [
+                    "Implemented a custom search algorithm using Cassandra on an at-rest encrypted database, ensuring security and efficiency.",
+                    "Singlehandedly deployed attachment functionality, managing the complete development lifecycle for front-end and back-end integration.",
+                    "Collaborated with design and product teams to create user-centric applications adhering to design principles and user flow requirements."
+                ]
+            }
+        ],
+        "projects": [
+            {
+                "name": "Yohsin Connect",
+                "technologies": "Python, LangChain, FAISS, PyTorch, TensorFlow",
+                "period": "2024",
+                "bullets": [
+                    "Developed a Retrival Augmented Generation (RAG) chatbot to provide instant responses to inquiries from prospective students at Habib University.",
+                    "Integrated advanced LLM models using TensorFlow and PyTorch to understand and generate human-like responses.",
+                    "Utilized LangChain for streamlined implementation of chat functionalities and FAISS for efficient information retrieval from a large vector database/store of university related documents."
+                ]
+            }
+        ],
+    } 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allows all origins. You can specify a specific URL here if needed.
@@ -49,3 +90,17 @@ async def return_custom_cv():
     
     # Return the file as a response
     return FileResponse(resume_path, media_type="application/pdf", filename="custom_resume.pdf")
+
+
+@app.post("/getCV")
+async def createCV(data:CVItem):
+    personal_info_dict = data.personalInfo.model_dump() # Convert to dictionary
+    skills_dict = data.skills.model_dump()
+    CVData["personal_info"] = personal_info_dict
+    CVData["skills"] = skills_dict
+    CVData["education"] = data.education.model_dump()["Education"]
+    CVData['experience']= data.experience.model_dump()["Experience"]
+    CVData["projects"] = data.projects.model_dump()["Projects"]
+    compile_resume(CVData)
+    cv = createCompiledResume()
+    return FileResponse(cv, media_type="application/pdf", filename="custom_resume.pdf")

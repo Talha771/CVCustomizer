@@ -1,4 +1,5 @@
 import subprocess
+import os 
 def generate_header(name, github_link, linkedin_link, email, phone):
     return f'''
 \\begin{{description}}
@@ -21,6 +22,7 @@ def generate_header(name, github_link, linkedin_link, email, phone):
 '''
 
 def generate_education(education_list):
+    print(education_list)
     """
     education_list: list of dicts with keys:
         - institution
@@ -164,16 +166,8 @@ def compile_resume(resume_data):
     
     return full_document
 
-# Example usage:
 # if __name__ == "__main__":
 #     resume_data = {
-#         "personal_info": {
-#             "name": "Muhammad Talha",
-#             "github_link": "https://github.com/Talha771",
-#             "linkedin_link": "https://linkedin.com/in/tjbravo",
-#             "email": "talha.j771@gmail.com",
-#             "phone": "(214)-909-3357"
-#         },
 #         "education": [
 #             {
 #                 "institution": "Habib University",
@@ -210,16 +204,42 @@ def compile_resume(resume_data):
 #                 ]
 #             }
 #         ],
-#         "skills": {
-#             "Languages": ["C/C++", "Python", "JavaScript", "HTML/CSS", "CUDA", "SQL", "LaTeX"],
-#             "Tools": ["Git/GitHub", "Bash", "Yaml", "Docker", "FASTAPI"]
-#         }
 #     }
-    
-#     # Generate the complete resume
+#     resume_data["skills"] =  {
+#         "Languages": ["C/C++", "Python", "JavaScript", "HTML/CSS", "CUDA", "SQL", "LaTeX"],
+#         "Tools": ["Git/GitHub", "Bash", "Yaml", "Docker", "FASTAPI"]
+#      }
+#     resume_data["personal_info"] = {
+#         "name": "Muhammad Talha",
+#         "github_link": "https://github.com/Talha771",
+#         "linkedin_link": "https://linkedin.com/in/tjbravo",
+#         "email": "talha.j771@gmail.com",
+#         "phone": "(214)-909-3357"
+#     }
 #     compile_resume(resume_data) 
-#     # subprocess.run(['tectonic','compiled.tex'])
 #     subprocess.run(['tectonic', 'Resume/compiled.tex'])
 
+    
+# create function to take compiled.tex and create a file, and return that file. 
+def createCompiledResume():
+    # Get the absolute path to the compiled.tex file
+    tex_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'compiled.tex')
+
+    # Run the subprocess command to compile the LaTeX file into PDF
+    result = subprocess.run(["tectonic", tex_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    if result.returncode != 0:
+        print(f"Error compiling LaTeX file: {result.stderr.decode()}")
+        return None
+
+    # Define the path for the generated PDF
+    pdf_path = os.path.join(os.path.dirname(tex_path), 'compiled.pdf')
+
+    # Return the path to the generated PDF
+    if os.path.exists(pdf_path):
+        return pdf_path
+    else:
+        print("PDF generation failed.")
+        return None
     
 

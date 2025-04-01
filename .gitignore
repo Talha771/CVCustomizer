@@ -4,5 +4,6 @@
 *.fdb_latexmk
 *.fls
 *.pyc
-
+*.out
+*.fls
 __pycache__/

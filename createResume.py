@@ -1,7 +1,7 @@
 from pylatex import Document, Section, Itemize, Command, Description
 from pylatex.utils import NoEscape
 import subprocess
-
+from Resume.header import generate_header
 
 
 
@@ -118,8 +118,17 @@ def create_resume(skills):
 
 \setlength{\footskip}{4.08003pt}
 """
-    sections = ['header','education','experience','projects']
+    sections = ['education','experience','projects']
+    tex_header = generate_header(
+    name="John Doe",
+    github_link="https://github.com/johndoe",
+    linkedin_link="https://www.linkedin.com/in/johndoe",
+    email="johndoe@example.com",
+    phone="+1-234-567-8901"
+)
     doc.preamble.append(NoEscape(preamble))
+    # print(tex_header)
+    doc.append(NoEscape(tex_header))
     for section in sections: 
         doc.append(create_section_from_file(section))
     doc.append(create_skills_section(languages, tools))
@@ -127,3 +136,5 @@ def create_resume(skills):
     doc.generate_tex("resume")  
     subprocess.run(["tectonic", "resume.tex"])
 
+
+# create_resume([[],[]])

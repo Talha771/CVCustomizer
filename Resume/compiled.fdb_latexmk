@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741755275.23204 "e:/CVCustomizer/Resume/compiled.tex" "compiled.pdf" "compiled" 1741755275.89554 0
+["pdflatex"] 1742705927.69426 "e:/CVCustomizer/Resume/compiled.tex" "compiled.pdf" "compiled" 1742705928.37889 0
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1735712608 2920 d63721872b8c77041b88e51b8f7c291d ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1735712608 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1735712608 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -54,7 +54,6 @@
   "c:/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty" 1734324342 5412 d5a2436094cd7be85769db90f29250a6 ""
   "c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty" 1734324376 17865 1a9bd36b4f98178fa551aca822290953 ""
   "c:/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty" 1734324403 19007 15924f7228aca6c6d184b115f4baa231 ""
-  "c:/texlive/2024/texmf-dist/tex/generic/pdftex/glyphtounicode.tex" 1734324404 216747 92ec6cf8e39216b4894417b5aa6f057a ""
   "c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty" 1734324406 20089 80423eac55aa175305d35b49e04fe23b ""
   "c:/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty" 1734324415 21514 b7557edcee22835ef6b03ede1802dad4 ""
   "c:/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty" 1734324440 7008 f92eaa0a3872ed622bbf538217cd2ab7 ""
@@ -106,10 +105,10 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1735712610 158547 917f327fb0c904b5339bf37f2f8f9b3b ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1735707347 1973291 fc8bffd0dd60c55614ab803e58dd9788 ""
   "c:/texlive/2024/texmf.cnf" 1734324444 801 3c495eb8f23f145306d09b4ffa3d382c ""
-  "compiled.aux" 1741755275 710 f126d21d16b709ae502af8ef9fe8ad51 "pdflatex"
-  "compiled.out" 1741755275 385 1c8cfcd1c7f1776e71b24ee479657a07 "pdflatex"
-  "compiled.tex" 1741755274 5351 caa5ce1d6b6ad29d6a6c63f42cf4b0f4 ""
-  "e:/CVCustomizer/Resume/compiled.tex" 1741755274 5351 caa5ce1d6b6ad29d6a6c63f42cf4b0f4 ""
+  "compiled.aux" 1742705928 710 f126d21d16b709ae502af8ef9fe8ad51 "pdflatex"
+  "compiled.out" 1742705928 385 1c8cfcd1c7f1776e71b24ee479657a07 "pdflatex"
+  "compiled.tex" 1742705926 5355 96e560af6a0e8cf0657818246b8f9725 ""
+  "e:/CVCustomizer/Resume/compiled.tex" 1742705926 5355 96e560af6a0e8cf0657818246b8f9725 ""
   (generated)
   "compiled.aux"
   "compiled.log"
